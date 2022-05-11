@@ -1,0 +1,25 @@
+
+
+.boxScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+h1{
+    font-family: 'Righteous', cursive;
+    font-size: 36px;
+    color: white;
+}
+
+button {
+    font-family: 'Recursive', sans-serif;;
+    color: #D70900;
+    background-color: white;
+    border: 1px solid #D70900;
+    border-radius: 5px;
+    padding: 10px 45px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.286);
+    cursor: pointer;
+}

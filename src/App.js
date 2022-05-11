@@ -1,9 +1,11 @@
+import './App.css';
+import InitialScreen from './Components/initialScreen';
+
 function App() {
   return (
-    <div className="App">
-      <h1>TESTE</h1>
+    <div className="app">
+      <InitialScreen />
     </div>
   );
 }
-
 export default App;
