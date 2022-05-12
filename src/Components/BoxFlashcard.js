@@ -1,9 +1,8 @@
 import styles from "./BoxFlashcard.module.css"
 
-export default function BoxFlashcard(){
-    function clickCard(){
-        console.log('clicou na carta');
-    }
+
+export default function BoxFlashcard({clickCard}){
+    
 
     return (
         <div className={styles.boxCard}>

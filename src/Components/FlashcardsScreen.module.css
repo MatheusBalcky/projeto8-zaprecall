@@ -5,6 +5,8 @@
     margin-top: 50px;
     gap: 20px;
     height: 100%;
+    border: 1px solid yellow;
+    max-width: 300px;
 }
 
 .top {

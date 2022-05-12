@@ -1,0 +1,21 @@
+.boxCard{
+    padding: 15px 10px;
+    background-color: #FFFFD4;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.187);
+    position: relative;
+}
+.boxCard ion-icon {
+    position: absolute;
+    right: 7px;
+    bottom: 2px;
+    font-size: 1.4em;
+    cursor: pointer;
+}
+.boxCard > p{
+    font-size: 0.8em;
+    font-family: 'Recursive', sans-serif;
+}
+.hidder {
+    display: none;
+}

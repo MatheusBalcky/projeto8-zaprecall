@@ -1,8 +1,19 @@
+import React from 'react';
 import styles from './FlashcardsScreen.module.css';
 import BoxFlashcard from './BoxFlashcard';
 import FooterCardScreen from './FooterCardScreen';
+import Card from './Card';
+
 
 export default function FlashcardsScreen (){
+
+    function clickCard(){
+        setphaseCard( <Card /> );
+    }
+    
+    const [phaseCard, setphaseCard] = React.useState(<BoxFlashcard clickCard={clickCard}/>)
+    
+
     return (
         <>
             <div className={styles.flashcardsContainer}>
@@ -12,7 +23,7 @@ export default function FlashcardsScreen (){
                     <h1>ZapRecall</h1>
                 </header>
 
-                <BoxFlashcard />
+                {phaseCard}
                 
             </div>
             <FooterCardScreen />
