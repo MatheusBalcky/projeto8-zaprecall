@@ -16,3 +16,7 @@
     font-size: 18px;
     font-family: 'Recursive', sans-serif;
 }
+
+.disable {
+    display: none;
+}

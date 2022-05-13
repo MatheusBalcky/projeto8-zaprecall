@@ -1,31 +1,32 @@
 import React from 'react';
-import styles from './FlashcardsScreen.module.css';
-import BoxFlashcard from './BoxFlashcard';
+import '../styles/FlashcardsScreen.css';
+import CardInitial from './CardInitial';
 import FooterCardScreen from './FooterCardScreen';
-import Card from './Card';
-
+import { deck } from './DeckApi';
+ 
 
 export default function FlashcardsScreen (){
 
-    function clickCard(){
-        setphaseCard( <Card /> );
-    }
-    
-    const [phaseCard, setphaseCard] = React.useState(<BoxFlashcard clickCard={clickCard}/>)
-    
-
     return (
         <>
-            <div className={styles.flashcardsContainer}>
+            <div className="flashcardsContainer">
 
-                <header className={styles.top}>
+                <header className="top">
                     <img width="50px" src="./images/logo.png" alt="logoOfZapRecall Brand Thunder" />
                     <h1>ZapRecall</h1>
                 </header>
 
-                {phaseCard}
+                {deck.map( (item, index) =>
+                <CardInitial 
+                key={index}
+                numero={index}
+                question={item.question}
+                answer={item.answer}>
+                </CardInitial>
+                )}
                 
             </div>
+
             <FooterCardScreen />
         </>
     )
