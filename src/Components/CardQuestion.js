@@ -11,10 +11,10 @@ function CardQuestionComp ({openCard}){
     )
 }
 
-export default function CardQuestion ({numero}){
+export default function CardQuestion ({numero, plusCorrect}){
 
     const [isOpen, setisOpen] = React.useState(<CardQuestionComp openCard={openCard} />);
-    function openCard () { setisOpen(<CardAnswer numero={numero}/>) }
+    function openCard () { setisOpen(<CardAnswer plusCorrect={plusCorrect} numero={numero}/>) }
 
     return (
         <>

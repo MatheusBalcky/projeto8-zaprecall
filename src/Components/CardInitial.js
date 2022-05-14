@@ -13,10 +13,12 @@ export function InitialComp ({ numero, openCard }){
 
 
 // * ESSE TA RODANDO X QNTD DE VEZES COM AS PERGUNTAS
-export default function CardInitial({ numero, question, answer }){
+export default function CardInitial({ numero, question, answer, footer, plusCorrect }){
 
     const [isOpen, setisOpen] = React.useState(<InitialComp openCard={openCard} numero={numero} />);
-    function openCard () { setisOpen(<CardQuestion numero={numero} />) }
+    function openCard () {
+        setisOpen(<CardQuestion plusCorrect={plusCorrect} numero={numero} />) 
+    }
 
     return (
         <>

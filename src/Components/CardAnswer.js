@@ -2,7 +2,7 @@ import React from "react"
 import "../styles/CardAnswer.css"
 import CardFinal from "./CardFinal"
 
-function CardAnsComp ({changeComponent}){
+function CardAnsComp ({selectAnswer}){
 
     return (
 
@@ -10,15 +10,15 @@ function CardAnsComp ({changeComponent}){
             <p className="textAnswer">Js é uma sintaxe para escrever HTML em JSX </p>
             <div className="options">
 
-                <div onClick={changeComponent} className="optionRed">
+                <div onClick={ () => selectAnswer ('red') } className="optionRed">
                     <p>Não<br />lembrei</p>
                 </div>
 
-                <div onClick={changeComponent} className="optionOrange">
+                <div onClick={ () => selectAnswer ('orange') } className="optionOrange">
                     <p>Quase não<br />lembrei</p>
                 </div>
 
-                <div onClick={changeComponent} className="optionGreen">
+                <div onClick={ () => selectAnswer ('green')} className="optionGreen">
                     <p>Zap!</p>
                 </div>
 
@@ -26,12 +26,18 @@ function CardAnsComp ({changeComponent}){
         </div>
     )
 }
+let rightAnswer = 0;
+export default function CardAnswer ({ numero, plusCorrect }){
 
-export default function CardAnswer ({ numero }){
-
-    const [Component, setComponent] = React.useState(<CardAnsComp changeComponent={changeComponent} />)
-    function changeComponent (){
-        setComponent(<CardFinal numero={ numero }/>)
+    const [Component, setComponent] = React.useState(<CardAnsComp selectAnswer={selectAnswer} />)
+    
+    function selectAnswer (answerClicked){
+        
+        setComponent(<CardFinal answerClicked={answerClicked} numero={ numero }/>);
+        if (answerClicked === 'green'){
+            rightAnswer++;
+            plusCorrect(rightAnswer) 
+        };
     }
 
     return (

@@ -7,6 +7,9 @@ import { deck } from './DeckApi';
 
 export default function FlashcardsScreen (){
 
+    const [rightAnswer, setCorrect] = React.useState(0);
+    function plusCorrect (valor){ setCorrect(valor) };
+
     return (
         <>
             <div className="flashcardsContainer">
@@ -21,13 +24,14 @@ export default function FlashcardsScreen (){
                 key={index}
                 numero={index}
                 question={item.question}
-                answer={item.answer}>
+                answer={item.answer}
+                plusCorrect={plusCorrect}>
                 </CardInitial>
                 )}
                 
             </div>
 
-            <FooterCardScreen numeroDePerguntas={deck.length} />
+            <FooterCardScreen rightAnswer={rightAnswer} numeroDePerguntas={deck.length} />
         </>
     )
 }

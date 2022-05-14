@@ -1,0 +1,43 @@
+.finalBox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.187);
+}
+ion-icon{
+    font-size: 1.4em;
+    cursor: default;
+}
+.finalBox > p{
+    font-size: 0.9em;
+    font-family: 'Recursive', sans-serif;
+}
+
+
+ion-icon[name='close-circle']{
+    color: red;
+}
+ion-icon[name='help-circle']{
+    color: #FF922E;
+}
+ion-icon[name='checkmark-circle']{
+    color: green;
+}
+
+.red{
+    color: red;
+}
+.orange{
+    color: #FF922E;
+}
+.green{
+    color: green;
+}
+
+
+
+
+
