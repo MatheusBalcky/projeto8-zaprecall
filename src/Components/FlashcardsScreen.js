@@ -6,9 +6,17 @@ import { deck } from './DeckApi';
  
 
 export default function FlashcardsScreen (){
+    
+    function comparador (){
+        return Math.random() - 0.5;
+    }
+    deck.sort(comparador);
 
     const [rightAnswer, setCorrect] = React.useState(0);
-    function plusCorrect (valor){ setCorrect(valor) };
+    function plusCorrect (valor){    setCorrect(valor)     };
+
+    let icons = ['teste'];
+    function pushIcon (icon){ console.log(icon); icons = [...icons, 'icon']; console.log(icons) };
 
     return (
         <>
@@ -25,13 +33,14 @@ export default function FlashcardsScreen (){
                 numero={index}
                 question={item.question}
                 answer={item.answer}
-                plusCorrect={plusCorrect}>
+                plusCorrect={plusCorrect}
+                pushIcon={pushIcon}>
                 </CardInitial>
                 )}
-                
+                <FooterCardScreen icons={icons} rightAnswer={rightAnswer} numeroDePerguntas={deck.length} />
             </div>
 
-            <FooterCardScreen rightAnswer={rightAnswer} numeroDePerguntas={deck.length} />
+            
         </>
     )
 }

@@ -1,24 +1,47 @@
-import React from "react"
-import "../styles/CardAnswer.css"
-import CardFinal from "./CardFinal"
+import React from "react";
+import "../styles/CardAnswer.css";
+import '../styles/CardFinal.css';
 
-function CardAnsComp ({selectAnswer}){
+let rightAnswer = 0;
+export default function CardAnswer ({ numero, plusCorrect, pushIcon, answer }){
+
+    const [Component, setComponent] = React.useState(<CardAnsComp answer={answer} selectAnswer={selectAnswer} />)
+    
+    function selectAnswer (answerClicked, ionIcon){
+
+        setComponent(<CardFinal pushIcon={pushIcon} ionIcon={ionIcon} answerClicked={answerClicked} numero={ numero }/>);
+
+        rightAnswer++;
+        plusCorrect(rightAnswer);
+        
+        pushIcon(ionIcon);
+    }
+
+    return (
+        <>
+        {Component}
+        </>
+    )
+}
+
+
+function CardAnsComp ({selectAnswer, answer}){
 
     return (
 
         <div className="boxAnswer">
-            <p className="textAnswer">Js é uma sintaxe para escrever HTML em JSX </p>
+            <p className="textAnswer">{answer}</p>
             <div className="options">
 
-                <div onClick={ () => selectAnswer ('red') } className="optionRed">
+                <div onClick={ () => selectAnswer ('red', <ion-icon name="close-circle"></ion-icon> ) } className="optionRed">
                     <p>Não<br />lembrei</p>
                 </div>
 
-                <div onClick={ () => selectAnswer ('orange') } className="optionOrange">
+                <div onClick={ () => selectAnswer ('orange', <ion-icon name="help-circle"></ion-icon> ) } className="optionOrange">
                     <p>Quase não<br />lembrei</p>
                 </div>
 
-                <div onClick={ () => selectAnswer ('green')} className="optionGreen">
+                <div onClick={ () => selectAnswer ('green', <ion-icon name="checkmark-circle"></ion-icon> ) } className="optionGreen">
                     <p>Zap!</p>
                 </div>
 
@@ -26,23 +49,13 @@ function CardAnsComp ({selectAnswer}){
         </div>
     )
 }
-let rightAnswer = 0;
-export default function CardAnswer ({ numero, plusCorrect }){
 
-    const [Component, setComponent] = React.useState(<CardAnsComp selectAnswer={selectAnswer} />)
-    
-    function selectAnswer (answerClicked){
-        
-        setComponent(<CardFinal answerClicked={answerClicked} numero={ numero }/>);
-        if (answerClicked === 'green'){
-            rightAnswer++;
-            plusCorrect(rightAnswer) 
-        };
-    }
+function CardFinal ({numero, answerClicked, ionIcon}){
 
     return (
-        <>
-        {Component}
-        </>
+        <div className="finalBox">
+            <p className={answerClicked} ><del>Pergunta {numero + 1}</del></p>
+            {ionIcon}
+        </div>
     )
 }
