@@ -1,10 +1,10 @@
-import "../styles/BoxFlashcard.css"
+import "../styles/CardInitial.css"
 import React from "react"
 import CardQuestion from "./CardQuestion";
 
-function InitialComp ({ numero, openCard }){
+export function InitialComp ({ numero, openCard }){
     return (
-        <div className="questionBox">
+        <div className="initialBox">
             <p>Pergunta {numero + 1}</p>
             <ion-icon onClick={openCard} name="play-outline"></ion-icon>
         </div>
@@ -12,13 +12,11 @@ function InitialComp ({ numero, openCard }){
 }
 
 
-
-
 // * ESSE TA RODANDO X QNTD DE VEZES COM AS PERGUNTAS
 export default function CardInitial({ numero, question, answer }){
 
     const [isOpen, setisOpen] = React.useState(<InitialComp openCard={openCard} numero={numero} />);
-    function openCard () { setisOpen(<CardQuestion />) }
+    function openCard () { setisOpen(<CardQuestion numero={numero} />) }
 
     return (
         <>

@@ -1,4 +1,4 @@
-.questionBox{
+.initialBox{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,14 +7,11 @@
     border-radius: 5px;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.187);
 }
-.questionBox ion-icon {
+.initialBox ion-icon {
     font-size: 1.4em;
     cursor: pointer;
 }
-.questionBox > p{
+.initialBox > p{
     font-size: 0.9em;
     font-family: 'Recursive', sans-serif;
-}
-.disable {
-    display: none;
 }

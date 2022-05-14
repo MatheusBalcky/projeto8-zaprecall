@@ -1,21 +1,19 @@
-.boxCard{
-    padding: 15px 10px;
+.questionBox{
+    padding: 10px;
     background-color: #FFFFD4;
     border-radius: 5px;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.187);
     position: relative;
+    height: 70px;
 }
-.boxCard ion-icon {
+.questionBox ion-icon {
     position: absolute;
-    right: 7px;
+    right: 10px;
     bottom: 2px;
-    font-size: 1.4em;
+    font-size: 1.5em;
     cursor: pointer;
 }
-.boxCard > p{
-    font-size: 0.8em;
+.questionBox > p{
+    font-size: 0.9em;
     font-family: 'Recursive', sans-serif;
-}
-.disable {
-    display: none;
 }

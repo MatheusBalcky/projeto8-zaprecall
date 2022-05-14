@@ -1,9 +1,9 @@
 import "../styles/FooterCardScreen.css";
 
-export default function FooterCardScreen (){
+export default function FooterCardScreen ({numeroDePerguntas}){
     return (
         <div className="footer">
-            <h2>0/4 CONCLUÍDOS</h2>
+            <h2>0/{numeroDePerguntas} CONCLUÍDOS</h2>
         </div>
     )
 }

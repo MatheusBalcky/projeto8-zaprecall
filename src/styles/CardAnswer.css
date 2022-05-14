@@ -1,0 +1,49 @@
+.boxAnswer{
+    padding: 10px;
+    background-color: #FFFFD4;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.187);
+    position: relative;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 220px;
+}
+
+.boxAnswer > p{
+    font-size: 14px;
+    font-family: 'Recursive', sans-serif;
+}
+.options{
+    display: flex;
+    justify-content: space-around;
+}
+.options div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.options p {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.6em;
+    font-family: 'Recursive', sans-serif;
+}
+
+.optionRed{
+    background-color: red;
+}
+
+.optionOrange{
+    background-color: orange;
+}
+
+.optionGreen{
+    background-color: green;
+}

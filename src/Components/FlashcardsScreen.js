@@ -27,7 +27,7 @@ export default function FlashcardsScreen (){
                 
             </div>
 
-            <FooterCardScreen />
+            <FooterCardScreen numeroDePerguntas={deck.length} />
         </>
     )
 }
