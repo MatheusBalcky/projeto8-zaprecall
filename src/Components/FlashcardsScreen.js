@@ -3,20 +3,30 @@ import '../styles/FlashcardsScreen.css';
 import CardInitial from './CardInitial';
 import FooterCardScreen from './FooterCardScreen';
 import { deck } from './DeckApi';
- 
 
 export default function FlashcardsScreen (){
     
-    function comparador (){
-        return Math.random() - 0.5;
-    }
+    function comparador (){ return Math.random() - 0.5 }
     deck.sort(comparador);
 
-    const [rightAnswer, setCorrect] = React.useState(0);
-    function plusCorrect (valor){    setCorrect(valor)     };
+    const [cardsConcluded, setCorrect] = React.useState(0);
+    function attCardsConcluded (valor) { setCorrect(valor)  };
 
-    let icons = ['teste'];
-    function pushIcon (icon){ console.log(icon); icons = [...icons, 'icon']; console.log(icons) };
+    let icons = [];
+    const [iconsFooter, seticonsFooter] = React.useState([]);
+    function pushIcon (icon){
+        icons = [...icons, icon];
+        seticonsFooter(icons)}
+
+    const [finalMessage, setfinalMessage] = React.useState('');
+    function attFinalMessage (clicks, rightAnswer){
+        if (clicks === deck.length && rightAnswer === deck.length){
+            setfinalMessage(<p className='finalMessage'>Você não esqueceu de<br/>nenhum flashcard!</p>)
+
+        } else if (clicks === deck.length && rightAnswer < deck.length){
+            setfinalMessage(<p className='finalMessage'>Ainda faltam alguns...<br/>Mas não desanime!</p>)
+        }
+    }
 
     return (
         <>
@@ -33,13 +43,13 @@ export default function FlashcardsScreen (){
                 numero={index}
                 question={item.question}
                 answer={item.answer}
-                plusCorrect={plusCorrect}
-                pushIcon={pushIcon}>
-                </CardInitial>
-                )}
-                <FooterCardScreen icons={icons} rightAnswer={rightAnswer} numeroDePerguntas={deck.length} />
-            </div>
+                pushIcon={pushIcon}
+                attCardsConcluded={attCardsConcluded}
+                attFinalMessage={attFinalMessage}>
+                </CardInitial> )}
 
+                <FooterCardScreen icons={iconsFooter} finalMessage={finalMessage} cardsConcluded={cardsConcluded} numeroDePerguntas={deck.length} />
+            </div>
             
         </>
     )

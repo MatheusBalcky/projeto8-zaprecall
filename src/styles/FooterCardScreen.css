@@ -1,10 +1,9 @@
 .footer{
-    padding: 5px 0px 0px 0px;
+    padding: 10px 0px;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 50px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -21,4 +20,8 @@
 
 .disable {
     display: none;
+}
+.finalMessage{
+    text-align: center;
+    font-family: 'Recursive', sans-serif;
 }
