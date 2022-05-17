@@ -3,7 +3,7 @@ export const deck = [
     answer: 'Uma extensão de linguagem do JavaScript.'},
     {question: 'O React é ___',
     answer: 'Uma biblioteca JavaScript para construção de interfaces'},
-    /*{question: 'Componentes devem iniciar com ___',
+    {question: 'Componentes devem iniciar com ___',
     answer: 'Letra maiúscula'},
     {question: 'Podemos colocar _ dentro do JSX',
     answer: 'Expressões'},
@@ -14,5 +14,5 @@ export const deck = [
     {question: 'Usamos props para ___',
     answer: 'Passar diferentes informações para componentes'},
     {question: 'Usamos estado (state) para __',
-    answer: 'Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente'},*/
+    answer: 'Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente'}
 ]
